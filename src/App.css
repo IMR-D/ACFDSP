@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+.WorkSpace {
+  display: grid;
+  margin: 25px;
+  grid-template-areas:
+    ". title title ."
+    ". . . . "
+    ". InputToken InputToken ."
+    ". DescriptionToken DescriptionToken ."
+    ". . . ."
+    ". InputUrl InputUrl ."
+    ". DescriptionInput DescriptionInput ."
+    " . ButtonConnected ButtonConnected ."
+    ". . . ."
+    ". ButtonWord ButtonExcel . "
+    ". . . ."
+    " . link link ."
+    " . DescriptionHowGetToken DescriptionHowGetToken .";
+  grid-template-rows: repeat(19, 25px);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.ButtonExcel {
+  display: grid;
+  grid-area: ButtonExcel;
   align-items: center;
+  justify-self: right;
+  color: #c0c0c0;
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  background-color: #188038;
+}
+.ButtonWord {
+  display: grid;
+  grid-area: ButtonWord;
+  align-items: center;
+  color: #c0c0c0;
+  border: none;
+  width: 90%;
+  border-radius: 5px;
+  background-color: #2b579a;
+}
+
+.title {
+  display: grid;
+  justify-self: center;
+  grid-area: title;
+  color: #c0c0c0;
+  font-size: 15pt;
+}
+.InputUrl {
+  display: grid;
+  grid-area: InputUrl;
+  margin-right: 5px;
+  height: 25px;
+  color: #282c34;
+  border: none;
+  border-radius: 5px;
+  background-color: #c0c0c0;
+}
+
+.ButtonConnected {
+  display: grid;
+  grid-area: ButtonConnected;
+  align-items: center;
+  color: #282c34;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffbb00;
+}
+
+.DescriptionInput {
+  display: grid;
+  grid-area: DescriptionInput;
+  color: #c0c0c0;
+  font-size: 8pt;
+}
+
+.DescriptionToken {
+  display: grid;
+  grid-area: DescriptionToken;
+  color: #c0c0c0;
+  font-size: 8pt;
+}
+
+.InputToken {
+  display: grid;
+  grid-area: InputToken;
+  margin-right: 5px;
+  height: 25px;
+  color: #282c34;
+  border: none;
+  border-radius: 5px;
+  background-color: #c0c0c0;
+}
+.getLinkToken {
+  display: grid;
+  grid-area: link;
+  color: #c0c0c0;
+}
+
+.DescriptionHowGetToken {
+  display: grid;
+  grid-area: DescriptionHowGetToken;
+  color: #c0c0c0;
+  font-size: 8pt;
+}
+
+.author {
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  grid-row: 19/20;
+  grid-column: 2/4;
+  color: #c0c0c0;
+  font-size: 8pt;
 }
