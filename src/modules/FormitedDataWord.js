@@ -138,6 +138,4 @@ export const FormitedDataWord = (data) => {
   objectFillOfData = JSON.stringify(objectFillOfData);
   objectFillOfData = JSON.parse(objectFillOfData);
   CreateDocWord(objectFillOfData);
-
-  return;
 };

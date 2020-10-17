@@ -32,7 +32,7 @@ function errorHandler(error) {
 
 const CreateDocWord = async (data) => {
   let content = fs.readFileSync(
-    path.resolve("C:/Users/IMRD/Desktop/firstappnw/src/files", "input.docx"),
+    path.resolve("../src/files", "template.docx"),
     "binary"
   );
 
@@ -59,10 +59,7 @@ const CreateDocWord = async (data) => {
   let buf = doc.getZip().generate({ type: "nodebuffer" });
 
   // buf is a nodejs buffer, you can either write it to a file or do anything else with it.
-  fs.writeFileSync(
-    path.resolve("C:/Users/IMRD/Desktop/firstappnw/src/files", "output.docx"),
-    buf
-  );
+  fs.writeFileSync(path.resolve("../src/files", "output.docx"), buf);
   return alert("Import finished!");
 
   //Load the docx file as a binary

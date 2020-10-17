@@ -1,6 +1,7 @@
 {
   "name": "firstappnw",
   "version": "0.1.0",
+  "author": "Rassomahin D.S. | <danila.rasom17@gmail.com>",
   "private": true,
   "window": {
     "width": 800,
@@ -50,7 +51,6 @@
   "nwBuilder": {
     "//": "https://github.com/nwjs-community/nw-builder",
     "platforms": [
-      "osx64",
       "win32",
       "win64"
     ],

@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { FormitedDataWord } from "./modules/FormitedDataWord.js";
 import { FormitedDataExcel } from "./modules/FormitedDataExcel.js";
 
-let SHEET_ID = "1yL_BTsaq1_3ItndFxO6CooNWpaXX1K376RULFGrv5wo";
-let ACCESS_TOKEN =
-  "ya29.a0AfH6SMBT1U4_L2H_rr12yq5GQZUeu0dkircTKlsuC2Tp6j7HOthttNcQYcXnvKkeVog76-v3zQh5pnbtDkGVRB0gjyDLNYOpCraZiV1CJVx2mhs7am4kWboNKzph_SRzZSJozSPN6INmGhAZcTwX22rM4vN3vU2MoFA2";
+let SHEET_ID = "";
+let ACCESS_TOKEN = "";
 
 const checkConnection = async () => {
   try {
@@ -49,7 +48,7 @@ const getSheetValues = async () => {
 const callFuncWord = async () => {
   try {
     let data = await getSheetValues();
-    return FormitedDataWord(data);
+    FormitedDataWord(data);
   } catch (e) {
     alert(e.message);
   }
@@ -65,6 +64,10 @@ const callFuncExcel = async () => {
 };
 
 function App() {
+  const [token, setToken] = useState();
+  const [sheetsId, setSheetsId] = useState();
+  SHEET_ID = sheetsId;
+  ACCESS_TOKEN = token;
   return (
     <div className="App">
       <div className="WorkSpace">
@@ -74,7 +77,7 @@ function App() {
 
         <input
           onChange={(e) => {
-            ACCESS_TOKEN = e.target.value;
+            setToken(e.target.value);
           }}
           type="text"
           className="InputToken"
@@ -84,7 +87,7 @@ function App() {
         />
         <input
           onChange={(e) => {
-            SHEET_ID = e.target.value;
+            setSheetsId(e.target.value);
           }}
           type="text"
           className="InputUrl"
@@ -117,12 +120,12 @@ function App() {
           GET TOKEN
         </a>
         <span className="DescriptionHowGetToken">
-          That to get token you need click on the link,then log in.><br></br>
-          Step 1 => select "Google Sheets API v4" and select
+          That to get token you need click on the link,then log in.<br></br>
+          Step 1 - select "Google Sheets API v4" and select
           "https://www.googleapis.com/auth/spreadsheets" then to click on the
-          blue button "Authorize APIs"<br></br>Step 2 => to click the button on
+          blue button "Authorize APIs"<br></br>Step 2 - to click the button on
           "Exchange authorization code for tokens button" <br />
-          finally => your token will be in the field "Access token"
+          finally - your token will be in the field "Access token"
         </span>
         <span className="author">Developer - Rassomahin Daniel</span>
       </div>
